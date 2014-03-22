@@ -30,7 +30,7 @@ function Server(remote, opts) {
     opts.secure = false;
   }
 
-  var domainRE = /^(?=.{1,255}$)[0-9A-Za-z](?:(?:[0-9A-Za-z]|-){0,61}[0-9A-Za-z])?(?:\.[0-9A-Za-z](?:(?:[0-9A-Za-z]|-){0,61}[0-9A-Za-z])?)*\.?$/;
+  var domainRE = /^(?=.{1,255}$)[0-9A-Za-z](?:(?:[0-9A-Za-z]|-|_){0,61}[0-9A-Za-z])?(?:\.[0-9A-Za-z](?:(?:[0-9A-Za-z]|-|_){0,61}[0-9A-Za-z])?)*\.?$/;
 
   if (!domainRE.test(opts.host)) {
     throw new Error('Server host is malformed, use "host" and "port" server configuration');
